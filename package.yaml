@@ -29,6 +29,5 @@ tests:
     - lab-tuples-lists
     - tasty
     - tasty-reporter-muffled
-    - hedgehog
-    - tasty-hedgehog
     - tasty-hunit
+    - tasty-quickcheck
