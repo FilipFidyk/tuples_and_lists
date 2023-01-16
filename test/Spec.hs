@@ -19,7 +19,7 @@ main = do
 
 tests :: TestTree
 tests = testGroup "Tests"
-    [testPair, testTriple, testCurry, testNull, testPalindrome, testSayTimes]
+    [testPair, testTriple, testNull, testPalindrome, testSayTimes]
 
 testPair :: TestTree
 testPair = testGroup "pairs" [
@@ -77,20 +77,6 @@ testTriple = testGroup "triples" [
                 a = age birthday today
             step $ "Based on `birthday` and `today`, you are " ++ show a ++ " years old!"
     ]
-    ]
-
-testCurry :: TestTree
-testCurry = testGroup "currying and uncurrying"
-    [ testProperty "curry correctly curries a function"
-        $ property $ do
-            x <- choose @Int (0,1000000)
-            y <- choose @Int (0,1000000)
-            pure $ curry (\(a,b) -> (^) a b) x y == x ^ y
-    , testProperty "uncurry correctly uncurries a function"
-        $ property $ do
-            x <- choose @Int (0,1000000)
-            y <- choose @Int (0,1000000)
-            pure $ uncurry (^) (x,y) == x ^ y
     ]
 
 testNull :: TestTree

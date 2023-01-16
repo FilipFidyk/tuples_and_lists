@@ -21,17 +21,6 @@ today = error "Not implemented"
 age :: (Int,Int,Int) -> (Int,Int,Int) -> Int
 age (bd,bm,by) (td,tm,ty) = error "Not implemented"
 
-
---------------------------------------------------------------------------------
--- CURRYING
-
-curry :: ((a,b) -> c) -> a -> b -> c
-curry f = error "Not implemented"
-
-uncurry :: (a -> b -> c) -> (a,b) -> c
-uncurry f = error "Not implemented"
-
-
 --------------------------------------------------------------------------------
 -- LISTS
 
